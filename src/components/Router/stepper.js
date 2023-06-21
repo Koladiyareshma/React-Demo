@@ -22,16 +22,17 @@ function StepperBar() {
         setCurrentStep(step);
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e) => {debugger
+        debugger
         const { name, value, checked } = e.target;
-        if (name === "hobbies") {
+        if (name === "hobbies" || name === "course" || name === "ref") {
             if (checked) {
-                // userDetail.hobbies.push(value)
-                userDetail.hobbies = [...userDetail.hobbies, value]
+                const multiArr = userDetail?.name || []
+                multiArr.push(value)
+                setUserDetail({ ...userDetail, [name]: multiArr })
             } else {
                 userDetail.hobbies = userDetail.hobbies.filter(x => x !== value)
             }
-            setUserDetail({ ...userDetail.hobbies })
         } else {
             setUserDetail({ ...userDetail, [name]: value })
         }
@@ -78,7 +79,7 @@ function StepperBar() {
                     {currentStep === 1 && Education_Detail(handleChange, userDetail)}
                     {currentStep === 2 && Work_Detail(handleChange, userDetail)}
                     {/* {currentStep === 3 && Table_Data()} */}
-                    
+
                     {currentStep === 0 &&
                         <Button
                             type="button"

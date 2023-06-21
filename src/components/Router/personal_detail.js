@@ -4,8 +4,8 @@ import {
 } from '@mui/material'
 import React from 'react'
 
-function Personal_Detail(handleChange,userDetail) {
-    
+function Personal_Detail(handleChange, userDetail) {
+
     return (
         <>
             <div>
@@ -36,7 +36,7 @@ function Personal_Detail(handleChange,userDetail) {
                             label="First Name"
                             // helperText={isError.fname}
                             value={userDetail?.fname}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             fullWidth
                         />
                         <TextField
@@ -47,7 +47,7 @@ function Personal_Detail(handleChange,userDetail) {
                             label="Last Name"
                             // helperText={isError.lname}
                             value={userDetail?.lname}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             fullWidth
                         />
                     </Stack>
@@ -61,7 +61,7 @@ function Personal_Detail(handleChange,userDetail) {
                         // helperText={isError.phone}
                         fullWidth
                         value={userDetail?.phone}
-                        onChange={(e)=>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                         required
                         sx={{ mb: 4 }}
                     />
@@ -74,7 +74,7 @@ function Personal_Detail(handleChange,userDetail) {
                         // helperText={isError.age}
                         fullWidth
                         value={userDetail?.age}
-                        onChange={(e)=>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                         required
                         sx={{ mb: 4 }}
                     />
@@ -86,7 +86,7 @@ function Personal_Detail(handleChange,userDetail) {
                         // helperText={isError.date}
                         fullWidth
                         value={userDetail?.bod}
-                        onChange={(e)=>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                         required
                         sx={{ mb: 4 }}
                     />
@@ -99,7 +99,7 @@ function Personal_Detail(handleChange,userDetail) {
                             name="city"
                             // helperText={isError.city}
                             value={userDetail?.city}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                         >
                             {[{ name: 'Surat' }, { name: 'Mumbai' }, { name: 'Rajkot' }].map(e =>
                                 <MenuItem value={e.name} name='city'>{e.name}</MenuItem>)}
@@ -113,26 +113,25 @@ function Personal_Detail(handleChange,userDetail) {
                             name="gender"
                             // helperText={isError.gender}
                             value={userDetail?.gender}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                         >
                             {[{ name: 'Female' }, { name: 'Male' }, { name: 'Other' }].map(e =>
                                 <FormControlLabel value={e.name} name='gender' control={<Radio />} label={e.name} />)}
                         </RadioGroup>
                     </FormControl>
+
                     <FormControl>
                         <FormLabel id="demo-checkbox-group-label">Hobbies</FormLabel>
                         <FormGroup
                             row
-                            // helperText={isError.hobbies}
-                            name='hobbies'
-                            value={userDetail?.hobbies}
+                            // value={userDetail?.hobbies}
                         >
-                            {[{ name: 'Reading' }, { name: 'Writeing' }, { name: 'Typing' }, { name: 'Designing' }].map((e) =>
-                                // <FormControlLabel  value={e.name} name='hobbies' control={<Checkbox />} label={e.name} />)}
+                    {[{ name: 'Reading' }, { name: 'Writeing' }, { name: 'Typing' }, { name: 'Designing' }].map((e) =>
+                                //<FormControlLabel  value={e.name} name='hobbies' control={<Checkbox />} label={e.name} />)}
                                  <FormControlLabel
                                     control={
                                         <Checkbox
-                                            checked={userDetail?.hobbies?.includes(e.name)}
+                                            checked={userDetail.hobbies?.includes(e.name)}
                                             onChange={(e)=>handleChange(e)}
                                             name='hobbies'
                                             value={e.name} 
@@ -140,9 +139,22 @@ function Personal_Detail(handleChange,userDetail) {
                                     }
                                     label={e.name}
                                 />)} 
-                        </FormGroup>
+                    </FormGroup>
                     </FormControl>
-                     {/* <Stack spacing={0} direction="row" sx={{ marginBottom: 4 }}>
+
+
+                    {/* <FormControl>
+                        <FormLabel id="demo-checkbox-group-label">Hobbies</FormLabel>
+                        <FormGroup
+                            row
+                            value={userDetail.hobbies}
+                        >
+                            {[{ name: 'Reading' }, { name: 'Writeing' }, { name: 'Typing' }, { name: 'Designing' }].map((e) =>
+                                <FormControlLabel value={e.name} name='hobbies' checked={userDetail?.hobbies?.includes(e.name)} control={<Checkbox />} label={e.name} />)}
+                        </FormGroup>
+                    </FormControl> */}
+
+                    {/* <Stack spacing={0} direction="row" sx={{ marginBottom: 4 }}>
                                 <Button
                                     type="submit"
                                     fullWidth

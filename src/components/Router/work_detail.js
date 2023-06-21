@@ -106,7 +106,25 @@ function Work_Detail(handleChange,userDetail) {
                                 <MenuItem value={e.name} name='city'>{e.name}</MenuItem>)}
                         </Select>
                     </FormControl>
-                    
+                    <FormControl>
+                        <FormLabel id="demo-checkbox-group-label">Reference</FormLabel>
+                        <FormGroup
+                            row
+                        >
+                    {[{ name: 'FACEBOOK' }, { name: 'TWITTER' }, { name: 'GOOGLE' }, { name: 'OTHER' }].map((e) =>
+                                 <FormControlLabel
+                                    control={
+                                        <Checkbox
+                                            checked={userDetail.ref?.includes(e.name)}
+                                            onChange={(e)=>handleChange(e)}
+                                            name='ref'
+                                            value={e.name} 
+                                            />
+                                    }
+                                    label={e.name}
+                                />)} 
+                    </FormGroup>
+                    </FormControl>
                     {/* <Stack spacing={0} direction="row" sx={{ marginBottom: 4 }}>
                         <Button
                             type="submit"

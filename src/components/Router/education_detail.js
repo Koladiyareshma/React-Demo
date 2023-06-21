@@ -4,9 +4,8 @@ import {
 } from '@mui/material'
 import React from 'react'
 
-function Education_Detail(handleChange,userDetail) {
+function Education_Detail(handleChange, userDetail) {
 
-    
     return (
         <>
             <div>
@@ -36,7 +35,7 @@ function Education_Detail(handleChange,userDetail) {
                             color='secondary'
                             label="Student Name"
                             value={userDetail?.studfname}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             fullWidth
                         />
                         <TextField
@@ -46,7 +45,7 @@ function Education_Detail(handleChange,userDetail) {
                             color='secondary'
                             label="Last Name"
                             value={userDetail?.studlname}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             fullWidth
                         />
                     </Stack>
@@ -58,7 +57,7 @@ function Education_Detail(handleChange,userDetail) {
                         name="studemail"
                         // helperText={isError.email}
                         value={userDetail?.studemail}
-                        onChange={(e)=>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                         fullWidth
                         required
                         sx={{ mb: 4 }}
@@ -73,7 +72,7 @@ function Education_Detail(handleChange,userDetail) {
                         // helperText={isError.phone}
                         fullWidth
                         value={userDetail?.studphone}
-                        onChange={(e)=>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                         required
                         sx={{ mb: 4 }}
                     />
@@ -86,7 +85,7 @@ function Education_Detail(handleChange,userDetail) {
                             name="studcity"
                             // helperText={isError.city}
                             value={userDetail?.studcity}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                         >
                             {[{ name: 'Surat' }, { name: 'Mumbai' }, { name: 'Rajkot' }].map(e =>
                                 <MenuItem value={e.name} name='studcity'>{e.name}</MenuItem>)}
@@ -100,13 +99,31 @@ function Education_Detail(handleChange,userDetail) {
                             name="studgender"
                             // helperText={isError.gender}
                             value={userDetail?.studgender}
-                            onChange={(e)=>handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                         >
                             {[{ name: 'Female' }, { name: 'Male' }, { name: 'Other' }].map(e =>
                                 <FormControlLabel value={e.name} name='studgender' control={<Radio />} label={e.name} />)}
                         </RadioGroup>
                     </FormControl>
-                    
+                    <FormControl>
+                        <FormLabel id="demo-checkbox-group-label">Course</FormLabel>
+                        <FormGroup
+                            row
+                        >
+                            {[{ name: 'BBA' }, { name: 'B.COM' }, { name: 'BCA' }, { name: 'B.SC' }].map((e) =>
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox
+                                            checked={userDetail.course?.includes(e.name)}
+                                            onChange={(e) => handleChange(e)}
+                                            name='course'
+                                            value={e.name}
+                                        />
+                                    }
+                                    label={e.name}
+                                />)}
+                        </FormGroup>
+                    </FormControl>
                     {/* <Stack spacing={0} direction="row" sx={{ marginBottom: 4 }}>
                         <Button
                             type="submit"

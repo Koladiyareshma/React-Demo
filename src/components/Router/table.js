@@ -59,7 +59,8 @@ function Table_Data() {
                                                     <ListItemText>{x.gender}</ListItemText>
                                                 </ListItem>
                                                 <ListItem>
-                                                    <ListItemText>Hobbies:{x.hobbies}</ListItemText>
+                                                    <ListItemText>Hobbies:</ListItemText>
+                                                    <ListItemText sx={{ml:5}}>{x.hobbies}</ListItemText>
                                                 </ListItem>
                                             </List>
                                         </Grid>
@@ -90,9 +91,10 @@ function Table_Data() {
                                                     <ListItemText>City:</ListItemText>
                                                     <ListItemText  sx={{ml:2}}>{x.studcity}</ListItemText>
                                                 </ListItem>
-                                                {/* <ListItem>
-                                                    <ListItemText>Course:{x.course}</ListItemText>
-                                                </ListItem> */}
+                                               <ListItem>
+                                                    <ListItemText>Course:</ListItemText>
+                                                    <ListItemText sx={{ml:5}}>{x.course}</ListItemText>
+                                                </ListItem> 
                                             </List>
                                         </Grid>
                                     </Grid>
@@ -126,9 +128,10 @@ function Table_Data() {
                                                     <ListItemText>City:</ListItemText>
                                                     <ListItemText sx={{ml:2}}>{x.workcity}</ListItemText>
                                                 </ListItem>
-                                                {/* <ListItem>
-                                                    <ListItemText>ref:{x.ref}</ListItemText>
-                                                </ListItem> */}
+                                                 <ListItem>
+                                                    <ListItemText>ref:</ListItemText>
+                                                    <ListItemText sx={{ml:5}}>{x.ref}</ListItemText>
+                                                </ListItem>
                                             </List>
                                         </Grid>
                                     </Grid>
